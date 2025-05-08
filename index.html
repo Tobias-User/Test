@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stay Feedback</title>
+
+    <!-- Fonts und CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript wird nach dem Laden ausgeführt -->
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Sprache wechseln -->
+    <a href="index2.html" class="lang-switch">German</a>
+  
+    <div class="form-container">
+      <h1>STAY FEEDBACK</h1>
+  
+      <form id="feedback-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="2e97094c-9381-4c67-94c9-88ff2e60111b" />
+  
+        <!-- Email -->
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+  
+        <!-- Booking Number -->
+        <label for="booking_number">Booking Number</label>
+        <input type="text" id="booking_number" name="booking_number" required placeholder="Enter your booking number">
+  
+        <!-- Property -->
+        <label for="property">Which property are you staying in? (e.g., Smart Living)</label>
+        <select name="property" id="property" required>
+          <option value="" disabled selected>Select your property</option>
+          <!-- (Alle deine Optionen bleiben unverändert) -->
+          <option value="Bloom by Home1">Bloom by Home1</option>
+          <!-- ... weitere Optionen ... -->
+          <option value="HOME1 Das Kopernikus">HOME1 Das Kopernikus</option>
+        </select>
+  
+        <!-- Bewertung -->
+        <label>How would you rate your overall stay?</label>
+        <div class="options">
+          <label><input type="radio" name="overall_rating" value="Excellent" required> Excellent</label>
+          <label><input type="radio" name="overall_rating" value="Good"> Good</label>
+          <label><input type="radio" name="overall_rating" value="Average"> Average</label>
+          <label><input type="radio" name="overall_rating" value="Poor"> Poor</label>
+        </div>
+  
+        <!-- Freitextfelder -->
+        <label for="liked_most">What did you like the most about your stay?</label>
+        <textarea name="liked_most" id="liked_most" rows="3" required></textarea>
+  
+        <label for="improvements">What could we improve for future guests?</label>
+        <textarea name="improvements" id="improvements" rows="3" required></textarea>
+  
+        <!-- Check-in -->
+        <label>Was the check-in process smooth and easy?</label>
+        <div class="options">
+          <label><input type="radio" name="checkin" value="Yes" required> Yes</label>
+          <label><input type="radio" name="checkin" value="No"> No</label>
+        </div>
+        <textarea name="checkin_explain" id="checkin_explain" placeholder="If no, please explain" rows="2" disabled></textarea>
+  
+        <!-- Sauberkeit -->
+        <label>Was the apartment/property clean and well-prepared?</label>
+        <div class="options">
+          <label><input type="radio" name="clean" value="Yes" required> Yes</label>
+          <label><input type="radio" name="clean" value="No"> No</label>
+        </div>
+        <textarea name="clean_explain" id="clean_explain" placeholder="If no, please explain" rows="2"></textarea>
+  
+        <!-- Vorschläge -->
+        <label for="suggestions">Any suggestions or ideas for us?</label>
+        <textarea name="suggestions" id="suggestions" rows="3" required></textarea>
+  
+        <!-- Weiterempfehlung -->
+        <label>Would you stay with us again or recommend us to others?</label>
+        <div class="options">
+          <label><input type="radio" name="recommend" value="Yes" required> Yes</label>
+          <label><input type="radio" name="recommend" value="No"> No</label>
+        </div>
+        <textarea name="recommend_explain" id="recommend_explain" placeholder="If no, please explain" rows="2"></textarea>
+  
+        <!-- Abschicken -->
+        <button type="submit">Send Feedback</button>
+      </form>
+  
+      <div class="footer">THANK YOU FOR YOUR FEEDBACK</div>
+      <img src="Home1.png" alt="Home1 Logo" class="logo">
+    </div>
+  </body>
+
+</html>
