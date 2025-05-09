@@ -1,95 +1,175 @@
+/* Logo */
+.logo {
+  display: block;
+  margin: 30px auto 0;
+  max-width: 100px;
+  height: auto;
+}
+
+/* Sprachumschalter */
+.lang-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  color: #749176;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.lang-switch:hover {
+  background-color: #e6e6e6;
+  color: #5b765b;
+}
+
+/* Gesamtes Layout */
 body {
-    background-color: #749176;
-    font-family: 'Open Sans', sans-serif;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-  }
-  
-  .lang-switch {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #ffffff;
-    color: #749176;
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    transition: background-color 0.3s, color 0.3s;
-  }
-  .lang-switch:hover {
-    background-color: #e6e6e6;
-    color: #5b765b;
-  }
-  
+  background-color: #749176;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px; /* Abstand am Rand für kleine Displays */
+  box-sizing: border-box;
+}
+
+/* Formularcontainer */
+.form-container {
+  background-color: #8DAA8D;
+  padding: 30px 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+/* Titel */
+h1 {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.4em;
+  letter-spacing: 2px;
+  border: 1px solid #fff;
+  display: inline-block;
+  padding: 5px 15px;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin: 20px 0 5px;
+  font-weight: bold;
+}
+
+/* Textfelder und Inputs */
+textarea {
+  resize: none;
+}
+
+input,
+textarea,
+select {
+  background-color: #f0f0f0;
+  color: #333;
+  width: 95%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #ffffff;
+  background-color: #ffffff;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 15px;
+  margin: 10px 0;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: normal;
+  background: #e8e8e8;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 0.95em;
+}
+
+.options input[type="radio"] {
+  accent-color: #749176;
+  margin: 0;
+}
+
+
+/* Button */
+button {
+  background-color: #ffffff;
+  color: #749176;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 20px auto 0;
+  display: block;
+  width: auto;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #e6e6e6;
+  color: #5b765b;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Fußzeile */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1em;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+/* Media Query: für sehr kleine Displays */
+@media (max-width: 400px) {
   .form-container {
-    background-color: #8DAA8D;
-    padding: 40px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px 15px;
   }
-  
+
   h1 {
-    font-family: 'Cinzel', serif;
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 1.4em;
-    letter-spacing: 2px;
-    border: 1px solid #fff;
-    display: inline-block;
-    padding: 5px 15px;
+    font-size: 1.2em;
   }
-  
-  label {
-    display: block;
-    margin: 20px 0 5px;
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  textarea,
-  select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .options {
-    margin: 10px 0;
-  }
-  .options label {
-    display: block;
-  }
-  .options input {
-    margin-right: 10px;
-  }
-  
+
   button {
-    background-color: #ffffff;
-    color: #749176;
-    border: none;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-    width: 100%;
+    font-size: 0.95em;
+    padding: 8px 14px;
   }
-  
-  .footer {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 2em;
-    letter-spacing: 1px;
-  }
+}
