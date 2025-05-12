@@ -90,7 +90,6 @@ select {
   box-sizing: border-box;
 }
 
-
 input:focus,
 textarea:focus,
 select:focus {
@@ -101,27 +100,101 @@ select:focus {
 .options {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 15px;
-  margin: 10px 0;
-}
-
-.options label {
-  display: flex;
+  gap: 10px;
   align-items: center;
-  gap: 5px;
-  font-weight: normal;
-  background: #e8e8e8;
-  color: #333;
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-size: 0.95em;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
+.options.rating {
+    flex-direction: column;
+  }
+
+  label {
+  margin-bottom: 10px; /* Vergrößert den Abstand unter den Labels */
+}
+
+input, textarea, select {
+  margin-top: 5px; /* Fügt einen kleinen Abstand zwischen der Textbox und dem Label hinzu */
+}
+
+
+  .options.rating label {
+    width: 45%; /* Lässt die Breite automatisch anpassen */
+    padding: 6px 10px; /* Weniger Padding für kompaktere Buttons */
+    font-size: 0.9em; /* Etwas kleinerer Text */
+    margin-bottom: 3px; /* Abstand zwischen den Buttons */
+    text-align: center; /* Text bleibt zentriert */
+  }
+
+/* Radio-Button verstecken */
 .options input[type="radio"] {
-  accent-color: #749176;
-  margin: 0;
+  display: none; /* Versteckt den eigentlichen Radio-Button */
 }
 
+/* Label als interaktive Schaltfläche */
+.options label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8e8e8;  /* Normaler Hintergrund */
+  color: #333;           /* Textfarbe */
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 0.85em;
+  font-weight: 600;
+  cursor: pointer;      /* Zeigt an, dass es interaktiv ist */
+  position: relative;
+  transition: 
+    background-color 0.3s ease, 
+    color 0.3s ease, 
+    transform 0.2s ease, 
+    box-shadow 0.3s ease;
+  white-space: nowrap;
+  user-select: none;     /* Verhindert das Markieren des Textes */
+  border: 2px solid transparent;  /* Unsichtbare Grenze */
+}
+
+/* Hover-Effekt: Wenn der Benutzer mit der Maus darüber fährt */
+.options label:hover {
+  background-color: #dcdcdc;  /* Hintergrundfarbe beim Hover */
+  transform: scale(1.03);      /* Leichte Vergrößerung */
+}
+
+/* Wenn der Radio-Button ausgewählt ist */
+.options input[type="radio"]:checked + label {
+  background-color: #749176;  /* Hintergrundfarbe bei Auswahl */
+  color: #fff;               /* Textfarbe bei Auswahl */
+  border-color: #5b765b;     /* Randfarbe bei Auswahl */
+  box-shadow: 0 0 8px rgba(116, 145, 118, 0.6);  /* Schlagschatten */
+  transform: scale(1.1);      /* Vergrößern bei Auswahl */
+  transition: 
+    background-color 0.3s ease, 
+    color 0.3s ease, 
+    border-color 0.3s ease, 
+    box-shadow 0.3s ease,
+    transform 0.3s ease;      /* Sanfte Übergangsanimation */
+}
+
+#checkin-yes:checked ~ #checkin_explain,
+#clean-yes:checked ~ #clean_explain {
+  margin-top: 10px;
+}
+
+#checkin_explain,
+#clean_explain {
+  margin-top: 10px; /* zusätzlicher Abstand */
+}
+
+#checkin_explain,
+#clean_explain,
+#recommend_explain {
+  margin-top: 10px;
+}
+
+html {
+  -webkit-text-size-adjust: 100%; /* verhindert Zoom-Effekte auf iOS */
+}
 
 /* Button */
 button {
@@ -160,16 +233,15 @@ button:active {
 
 /* Media Query: für sehr kleine Displays */
 @media (max-width: 400px) {
-  .form-container {
-    padding: 20px 15px;
+  .options.rating {
+    flex-direction: column;
   }
 
-  h1 {
-    font-size: 1.2em;
-  }
-
-  button {
-    font-size: 0.95em;
-    padding: 8px 14px;
+  .options.rating label {
+    width: 45%; /* Lässt die Breite automatisch anpassen */
+    padding: 6px 10px; /* Weniger Padding für kompaktere Buttons */
+    font-size: 0.9em; /* Etwas kleinerer Text */
+    margin-bottom: 3px; /* Abstand zwischen den Buttons */
+    text-align: center; /* Text bleibt zentriert */
   }
 }

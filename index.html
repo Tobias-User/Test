@@ -4,9 +4,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stay Feedback</title>
+    <title>We Value Your Feedback</title>
 
     <!-- Fonts und CSS -->
+    <link rel="icon" type="image/png" href="Home1_icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -16,26 +17,26 @@
 
   <body>
     <!-- Sprache wechseln -->
-    <a href="index2.html" class="lang-switch">German</a>
+    <a href="index2.html" class="lang-switch">GERMAN</a>
   
     <div class="form-container">
-      <h1>STAY FEEDBACK</h1>
+      <h1>WE VALUE YOUR FEEDBACK</h1>
   
       <form id="feedback-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="2e97094c-9381-4c67-94c9-88ff2e60111b" />
   
         <!-- Email -->
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" required placeholder="Enter your email">
+        <label for="email">Enter your email</label>
+        <input type="email" id="email" name="email" required placeholder="guest@example.com">
   
         <!-- Booking Number -->
-        <label for="booking_number">Booking Number</label>
-        <input type="text" id="booking_number" name="booking_number" required placeholder="Enter your booking number">
+        <label for="booking_number">Your booking or reservation code</label>
+        <input type="text" id="booking_number" name="booking_number" required placeholder="8342059716 or H9X27JQ4B2">
   
         <!-- Property -->
-        <label for="property">Which property are you staying in? (e.g., Smart Living)</label>
+        <label for="property">Please select your accommodation.</label>
         <select name="property" id="property" required>
-          <option value="" disabled selected>Select your property</option>
+          <option value="" disabled selected>Select accommodation</option>
           <!-- (Alle deine Optionen bleiben unverändert) -->
           <option value="Bloom by Home1">Bloom by Home1</option>
           <option value="Green Apartments">Green Apartments</option>
@@ -57,48 +58,65 @@
         </select>
   
         <!-- Bewertung -->
-        <label>How would you rate your overall stay?</label>
-        <div class="options">
-          <label><input type="radio" name="overall_rating" value="Excellent" required> Excellent</label>
-          <label><input type="radio" name="overall_rating" value="Good"> Good</label>
-          <label><input type="radio" name="overall_rating" value="Average"> Average</label>
-          <label><input type="radio" name="overall_rating" value="Poor"> Poor</label>
-        </div>
+        <label>How was your stay?</label>
+        <div class="options rating">
+          <input type="radio" id="rating-excellent" name="overall_rating" value="Amazing" required>
+          <label for="rating-excellent">Amazing</label>
+
+          <input type="radio" id="rating-good" name="overall_rating" value="Great">
+          <label for="rating-good">Great</label>
+
+          <input type="radio" id="rating-average" name="overall_rating" value="Okay">
+          <label for="rating-average">Okay</label>
+
+          <input type="radio" id="rating-poor" name="overall_rating" value="Terrible">
+          <label for="rating-poor">Terrible</label>
+      </div>
+
   
         <!-- Freitextfelder -->
-        <label for="liked_most">What did you like the most about your stay?</label>
-        <textarea name="liked_most" id="liked_most" rows="3" required></textarea>
+        <label for="liked_most">What aspect of your stay did you enjoy the most?</label>
+        <textarea name="liked_most" id="liked_most" rows="3" placeholder="Type here..." required></textarea>
   
-        <label for="improvements">What could we improve for future guests?</label>
-        <textarea name="improvements" id="improvements" rows="3" required></textarea>
+        <label for="improvements">Any ideas for how we can improve?</label>
+        <textarea name="improvements" id="improvements" rows="3" placeholder="Type here..." required></textarea>
   
         <!-- Check-in -->
-        <label>Was the check-in process smooth and easy?</label>
+        <label>Was the check-in quick and easy for you?</label>
         <div class="options">
-          <label><input type="radio" name="checkin" value="Yes" required> Yes</label>
-          <label><input type="radio" name="checkin" value="No"> No</label>
+          <input type="radio" id="checkin-yes" name="checkin" value="Yes" required>
+          <label for="checkin-yes">Yes</label>
+
+          <input type="radio" id="checkin-no" name="checkin" value="No">
+          <label for="checkin-no">No</label>
         </div>
-        <textarea name="checkin_explain" id="checkin_explain" placeholder="If no, please explain" rows="2" disabled></textarea>
+        <textarea name="checkin_explain" id="checkin_explain" placeholder="If not, we'd love to hear why." rows="2" disabled></textarea>
   
         <!-- Sauberkeit -->
-        <label>Was the apartment/property clean and well-prepared?</label>
+        <label>Was the apartment in good condition and ready for your arrival?</label>
         <div class="options">
-          <label><input type="radio" name="clean" value="Yes" required> Yes</label>
-          <label><input type="radio" name="clean" value="No"> No</label>
+          <input type="radio" id="clean-yes" name="clean" value="Yes" required>
+          <label for="clean-yes">Yes</label>
+
+          <input type="radio" id="clean-no" name="clean" value="No">
+          <label for="clean-no">No</label>
         </div>
-        <textarea name="clean_explain" id="clean_explain" placeholder="If no, please explain" rows="2"></textarea>
+        <textarea name="clean_explain" id="clean_explain" placeholder="If not, we'd love to hear why." rows="2"></textarea>
   
         <!-- Vorschläge -->
-        <label for="suggestions">Any suggestions or ideas for us?</label>
-        <textarea name="suggestions" id="suggestions" rows="3" required></textarea>
+        <label for="suggestions">Any ideas on how we can enhance our services?</label>
+        <textarea name="suggestions" id="suggestions" rows="3" placeholder="Type here..." required></textarea>
   
         <!-- Weiterempfehlung -->
-        <label>Would you stay with us again or recommend us to others?</label>
+        <label>Would you consider booking with us again or recommending us?</label>
         <div class="options">
-          <label><input type="radio" name="recommend" value="Yes" required> Yes</label>
-          <label><input type="radio" name="recommend" value="No"> No</label>
+          <input type="radio" id="recommend-yes" name="recommend" value="Yes" required>
+          <label for="recommend-yes">Yes</label>
+
+          <input type="radio" id="recommend-no" name="recommend" value="No">
+          <label for="recommend-no">No</label>
         </div>
-        <textarea name="recommend_explain" id="recommend_explain" placeholder="If no, please explain" rows="2"></textarea>
+        <textarea name="recommend_explain" id="recommend_explain" placeholder="If not, we'd love to hear why." rows="2"></textarea>
   
         <!-- Abschicken -->
         <button type="submit">Send Feedback</button>
