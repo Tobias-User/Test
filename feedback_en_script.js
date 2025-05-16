@@ -61,6 +61,13 @@ document.getElementById("feedback-form").addEventListener("submit", function (e)
   const email = document.querySelector('input[name="email"]').value.trim();
   const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  const overallInput = document.querySelector("input[name='overall_rating']");
+  if (!overallInput || overallInput.value.trim() === "") {
+    alert("Please rate the overall stay.");
+    e.preventDefault();
+    return;
+  }
+
   if (!email || !pattern.test(email)) {
     alert("Please enter a valid email address.");
     e.preventDefault();
