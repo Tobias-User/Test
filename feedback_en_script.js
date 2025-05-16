@@ -63,7 +63,7 @@ document.getElementById("feedback-form").addEventListener("submit", function (e)
 
   const overallInput = document.querySelector("input[name='overall_rating']");
   if (!overallInput || overallInput.value.trim() === "") {
-    alert("Please rate the overall stay.");
+    alert("Please rate the overall stay (overall grade).");
     e.preventDefault();
     return;
   }

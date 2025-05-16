@@ -36,10 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (explain) {
           if (rating <= 3) {
             explain.style.display = "block";
-            explain.required = True;
+            explain.required = true;
           } else {
             explain.style.display = "none";
-            explain.required = False;
+            explain.required = false;
             explain.value = "";
           }
         }
@@ -54,7 +54,7 @@ document.getElementById("feedback-form").addEventListener("submit", function (e)
 
   const overallInput = document.querySelector("input[name='overall_rating']");
   if (!overallInput || overallInput.value.trim() === "") {
-    alert("Bitte bewerten Sie den Gesamtaufenthalt.");
+    alert("Bitte bewerten Sie den Gesamtaufenthalt (Gesamtnote).");
     e.preventDefault();
     return;
   }
