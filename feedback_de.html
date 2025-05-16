@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="only light" />
+  <title>Wir schätzen dein Feedback</title>
+
+  <!-- Fonts & Styles -->
+  <link rel="icon" type="image/png" href="Home1_icon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="feedback_de_style.css" />
+
+  <!-- JS -->
+  <script src="feedback_de_script.js" defer></script>
+</head>
+<body>
+  <!-- Language Switch -->
+  <a href="feedback_en.html" class="lang-switch">ENGLISCH</a>
+
+  <div class="form-container">
+    <h1>WIR SCHÄTZEN DEIN FEEDBACK</h1>
+
+    <form id="feedback-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="2e97094c-9381-4c67-94c9-88ff2e60111b" />
+
+      <!-- 📋 Buchungsdetails -->
+      <div class="form-card">
+        <h2>📋 Buchungsdetails</h2>
+
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required placeholder="guest@example.com" />
+
+        <label for="booking_number">Buchungscode</label>
+        <input type="text" id="booking_number" name="booking_number" required placeholder="8342059716 or H9X27JQ4B2" />
+
+        <label for="property">Unterkunft</label>
+        <select name="property" id="property" required>
+          <option value="" disabled selected>Unterkunft auswählen</option>
+          <option value="Bloom by Home1">Bloom by Home1</option>
+          <option value="Green Apartments">Green Apartments</option>
+          <option value="Central City Style Room by Home2">Central City Style Room by Home2</option>
+          <option value="Chic Central City Room by Home2">Chic Central City Room by Home2</option>
+          <option value="Vienna City Business Rooms">Vienna City Business Rooms</option>
+          <option value="Rive by Home1">Rive by Home1</option>
+          <option value="Central Apartment Lofts">Central Apartment Lofts</option>
+          <option value="Central City Rooms by Home2">Central City Rooms by Home2</option>
+          <option value="Central City Lofts">Central City Lofts</option>
+          <option value="Seven Room Vienna">Seven Room Vienna</option>
+          <option value="Wiener Wohlfühlstudio">Wiener Wohlfühlstudio</option>
+          <option value="Vienna West Rooms">Vienna West Rooms</option>
+          <option value="Modern Central Rooms">Modern Central Rooms</option>
+          <option value="Cubes by Tegetthof">Cubes by Tegetthof</option>
+          <option value="Modern City Apartments">Modern City Apartments</option>
+          <option value="City Center Lofts">City Center Lofts</option>
+          <option value="HOME1 Das Kopernikus">HOME1 Das Kopernikus</option>
+        </select>
+      </div>
+
+      <!-- ⭐ Bewertung des Aufenthalts -->
+      <div class="form-card">
+        <h2>⭐ Bewertung des Aufenthalts</h2>
+
+        <label>War der Check-in einfach?</label>
+        <div class="star-rating" data-group="checkin">
+          <span data-value="1">★</span>
+          <span data-value="2">★</span>
+          <span data-value="3">★</span>
+          <span data-value="4">★</span>
+          <span data-value="5">★</span>
+        </div>
+        <div id="star-label-checkin" class="star-label">Stern auswählen</div>
+
+        <textarea name="checkin_rating_explain" id="checkin_rating_explain" placeholder="Wir würden gerne wissen warum." rows="2" style="display: none;"></textarea>
+
+        <label>War das Zimmer in gutem Zustand?</label>
+        <div class="star-rating" data-group="room">
+          <span data-value="1">★</span>
+          <span data-value="2">★</span>
+          <span data-value="3">★</span>
+          <span data-value="4">★</span>
+          <span data-value="5">★</span>
+        </div>
+        <div id="star-label-room" class="star-label">Stern auswählen</div>
+
+        <textarea name="room_rating_explain" id="room_rating_explain" placeholder="Wir würden gerne wissen warum." rows="2" style="display: none;"></textarea>
+
+        <label>Würden Sie uns weiterempfehlen?</label>
+        <div class="star-rating" data-group="recommend">
+          <span data-value="1">★</span>
+          <span data-value="2">★</span>
+          <span data-value="3">★</span>
+          <span data-value="4">★</span>
+          <span data-value="5">★</span>
+        </div>
+
+        <div id="star-label-recommend" class="star-label">Stern auswählen</div>
+
+        <textarea name="recommend_rating_explain" id="recommend_rating_explain" placeholder="Wir würden gerne wissen warum." rows="2" style="display: none;"></textarea>
+
+        <label>Gesamter Aufenthalt</label>
+        <div class="star-rating" data-group="overall">
+          <span data-value="1">★</span>
+          <span data-value="2">★</span>
+          <span data-value="3">★</span>
+          <span data-value="4">★</span>
+          <span data-value="5">★</span>
+        </div>
+        <div id="star-label-overall" class="star-label">Stern auswählen</div>
+      </div>
+
+      <div class="form-card">
+        <h2>📝 Ihre Meinung</h2>
+
+        <label for="highlight">Was hat Ihnen an Ihrem Aufenthalt am besten gefallen?</label>
+        <textarea name="highlight" id="highlight" rows="3" placeholder="Was hat besonders hervorgestochen?"></textarea>
+
+        <label for="improvement">Haben Sie Ideen, wie wir uns verbessern können?</label>
+        <textarea name="improvement" id="improvement" rows="3" placeholder="Wir möchten uns ständig verbessern..."></textarea>
+      </div>
+
+      <button type="submit">FEEDBACK ABSENDEN</button>
+    </form>
+
+    <div class="footer">DANKE FÜR IHR FEEDBACK</div>
+    <img src="Home1.png" alt="Home1 Logo" class="logo" />
+  </div>
+</body>
+</html>
